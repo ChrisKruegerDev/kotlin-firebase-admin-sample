@@ -1,17 +1,27 @@
 (function (_, Kotlin) {
   'use strict';
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
+  var PrimitiveClasses$stringClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.stringClass;
+  var defineInlineFunction = Kotlin.defineInlineFunction;
+  var wrapFunction = Kotlin.wrapFunction;
   function main$lambda(req, res) {
-    console.log("Starting first function 'saveString'");
-    return res.status(200).send('Hello!');
+    PrimitiveClasses$stringClass;
+    console.log("Starting first function 'hello'");
+    return res.status(200).send('Hello World!');
   }
   function main(args) {
-    println('Hello world!');
     var functions = require('firebase-functions');
     var admin = require('firebase-admin');
     admin.initializeApp(functions.config().firebase);
-    exports.saveString = functions.https.onRequest(main$lambda);
+    exports.hello = functions.https.onRequest(main$lambda);
   }
+  var firstKotlinFunction = defineInlineFunction('index.firstKotlinFunction_30y1fr$', wrapFunction(function () {
+    var getKClass = Kotlin.getKClass;
+    return function (T_0, isT) {
+      return getKClass(T_0);
+    };
+  }));
+  $$importsForInline$$.index = _;
   _.main_kand9s$ = main;
   main([]);
   Kotlin.defineModule('index', _);
