@@ -9,10 +9,7 @@ fun main(args: Array<String>) {
     admin.initializeApp(functions.config().firebase)
 
     exports.hello = functions.https.onRequest { req, res ->
-        firstKotlinFunction<String>()
         console.log("Starting first function 'hello'")
         res.status(200).send("Hello World!")
     }
 }
-
-inline fun <reified T : Any> firstKotlinFunction(): KClass<T> = T::class
